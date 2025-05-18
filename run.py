@@ -15,4 +15,9 @@ SHEET = GSPREAD_CLIENT.open('love_sandwiches')
 sales = SHEET.worksheet('sales')
 
 data = sales.get_all_values()
-print(data)
+# print(data)
+sales_data = data[1:]
+sales_data = [list(map(int, row)) for row in sales_data]
+print(sales_data)
+# def get_sales_data():
+#     """
